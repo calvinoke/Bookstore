@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
 import './App.css';
 
 import CreateBook from './components/CreateBook';
@@ -12,10 +12,12 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route exact path='/' Component={ShowBookList} />
-          <Route path='/CreateBook' Component={CreateBook} />
-          <Route path='/UpdateBookInfo' Component={UpdateBookInfo} />
-          <Route path='/ShowBookDetails' Component={ShowBookDetails} />
+          <Switch>
+          <Route exact path='/' component={ShowBookList} />
+          <Route path='/CreateBook' component={CreateBook} />
+          <Route path='/UpdateBookInfo' component={UpdateBookInfo} />
+          <Route path='/ShowBookDetails' component={ShowBookDetails} />
+          </Switch>
         </div>
       </Router>
     );
